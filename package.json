@@ -4,7 +4,7 @@
   "description": "Logging microservice for elito-api",
   "main": "app.js",
   "scripts": {
-    "start": "node build/index.js",
+    "start": "node build/app.js",
     "build": "tsc",
     "postinstall": "npm run build"
   },
@@ -20,12 +20,13 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "@types/dotenv": "^4.0.3",
-    "fastify": "^1.5.0",
-    "ioredis": "^3.2.2"
-  },
-  "dependencies": {
     "@types/ioredis": "^3.2.8",
     "dotenv": "^6.0.0",
+    "typescript": "^2.9.1",
     "tsc": "^1.20150623.0"
+  },
+  "dependencies": {
+    "fastify": "^1.5.0",
+    "ioredis": "^3.2.2"
   }
 }

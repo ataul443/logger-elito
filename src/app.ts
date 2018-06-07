@@ -20,7 +20,9 @@ server.register(routes);
 server
   .ready()
   .then(data => {
-    server.listen(process.env.PORT, error => {
+    let PORT: any = process.env.PORT || 1337;
+    let HOST: any = process.env.HOST || "0.0.0.0";
+    server.listen(PORT, HOST, error => {
       if (error) {
         throw error;
       }
