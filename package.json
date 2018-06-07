@@ -1,0 +1,31 @@
+{
+  "name": "logger-mcs",
+  "version": "0.1.0",
+  "description": "Logging microservice for elito-api",
+  "main": "app.js",
+  "scripts": {
+    "start": "node build/index.js",
+    "build": "tsc",
+    "postinstall": "npm run build"
+  },
+  "keywords": [
+    "logger",
+    "logging",
+    "log",
+    "logger-msc",
+    "log-elito",
+    "logger-elito"
+  ],
+  "author": "Shekh Ataul <ataul.one@gmail.com>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@types/dotenv": "^4.0.3",
+    "fastify": "^1.5.0",
+    "ioredis": "^3.2.2"
+  },
+  "dependencies": {
+    "@types/ioredis": "^3.2.8",
+    "dotenv": "^6.0.0",
+    "tsc": "^1.20150623.0"
+  }
+}
