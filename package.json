@@ -27,6 +27,8 @@
   },
   "dependencies": {
     "fastify": "^1.5.0",
-    "ioredis": "^3.2.2"
+    "ioredis": "^3.2.2",
+    "lodash": "^4.17.10",
+    "minimist": "^1.2.0"
   }
 }

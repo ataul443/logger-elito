@@ -14,7 +14,9 @@ function routes(fastify, options) {
     return __awaiter(this, void 0, void 0, function* () {
         fastify.post("/register", handlers_1.registerLogClient);
         fastify.post("/sync", { beforeHandler: [middlewares_1.authStatus] }, handlers_1.syncLog);
-        fastify.post("/logs", handlers_1.logsDispatcher);
+        fastify.post("/logs", { beforeHandler: [middlewares_1.authStatus] }, handlers_1.logsDispatcher);
+        fastify.post("/register-error", { beforeHandler: [middlewares_1.authStatus] }, handlers_1.registerLog);
+        fastify.get("/8707458299/incoming-heartbeat", handlers_1.heartBeatRegister);
     });
 }
 exports.routes = routes;

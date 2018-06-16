@@ -3,9 +3,10 @@ import * as pino from "pino";
 import * as dotenv from "dotenv";
 import path = require("path");
 import { routes } from "./routes";
-import { authStatus } from "./middlewares";
 
-dotenv.config({ path: path.join(__dirname, "..", ".env") });
+if (!process.env.REDIS_URL) {
+  dotenv.config({ path: path.join(__dirname, "..", ".env") });
+}
 
 const logger = pino({
   serializers: {
@@ -26,7 +27,7 @@ server
       if (error) {
         throw error;
       }
-      console.log(`Log microservice started at port ${process.env.PORT}...`);
+      console.log(`Log microservice started at port ${process.env.PORT}...\n`);
     });
   })
   .catch(e => {
